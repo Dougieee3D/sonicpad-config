@@ -1,0 +1,268 @@
+-------------------- Log Start | Fri Sep  5 21:48:20 2025 --------------------
+platform: Linux-4.9.191-aarch64-with-glibc2.31
+data_path: /home/sonic/printer_data
+is_default_data_path: False
+config_file: /home/sonic/printer_data/config/moonraker.conf
+backup_config: /home/sonic/printer_data/config/.moonraker.conf.bkp
+startup_warnings: []
+verbose: False
+debug: False
+asyncio_debug: False
+is_backup_config: False
+is_python_package: False
+instance_uuid: 79cdbd63c09f4c5e8fa2daf11cd22955
+unix_socket_path: /home/sonic/printer_data/comms/moonraker.sock
+structured_logging: False
+software_version: v0.9.3-104-g52e3158
+git_branch: master
+git_remote: origin
+git_repo_url: https://github.com/Arksine/moonraker.git
+modified_files: []
+unofficial_components: []
+log_file: /home/sonic/printer_data/logs/moonraker.log
+python_version: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
+launch_args: /home/sonic/moonraker-env/bin/python /home/sonic/moonraker/moonraker/moonraker.py -d /home/sonic/printer_data
+msgspec_enabled: False
+uvloop_enabled: False
+
+#################### Moonraker Configuration ####################
+
+[server]
+host = 0.0.0.0
+port = 7125
+klippy_uds_address = /home/sonic/printer_data/comms/klippy.sock
+
+[authorization]
+trusted_clients = 
+	172.22.0.0/16
+	10.0.0.0/8
+	127.0.0.0/8
+	169.254.0.0/16
+	172.16.0.0/12
+	192.168.0.0/16
+	FE80::/10
+	::1/128
+cors_domains = 
+	*.lan
+	*.local
+	*://localhost
+	*://localhost:*
+	*://my.mainsail.xyz
+	*://app.fluidd.xyz
+
+[octoprint_compat]
+
+[history]
+
+[update_manager]
+refresh_interval = 168
+enable_auto_refresh = True
+
+[update_manager KlipperScreen]
+type = git_repo
+path = /home/sonic/KlipperScreen
+origin = https://github.com/jordanruthe/KlipperScreen.git
+env = /home/sonic/.KlipperScreen-env/bin/python
+requirements = scripts/KlipperScreen-requirements.txt
+install_script = scripts/KlipperScreen-install.sh
+
+[update_manager mainsail-config]
+type = git_repo
+primary_branch = master
+path = ~/mainsail-config
+origin = https://github.com/mainsail-crew/mainsail-config.git
+managed_services = klipper
+
+[update_manager mainsail]
+type = web
+channel = stable
+repo = mainsail-crew/mainsail
+path = ~/mainsail
+
+[update_manager octoeverywhere]
+type = git_repo
+channel = beta
+path = /home/sonic/octoeverywhere
+origin = https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere.git
+env = /home/sonic/octoeverywhere-env/bin/python
+requirements = requirements.txt
+install_script = install.sh
+managed_services = 
+	octoeverywhere
+
+[announcements]
+subscriptions = 
+	octoapp.
+
+[update_manager octoapp]
+type = git_repo
+channel = beta
+primary_branch = release
+path = /home/sonic/octoapp
+origin = https://github.com/crysxd/OctoApp-Plugin.git
+env = /home/sonic/octoapp-env/bin/python
+requirements = requirements.txt
+install_script = install.sh
+managed_services = 
+	octoapp
+
+[update_manager moonraker-obico]
+type = git_repo
+path = /home/sonic/moonraker-obico
+origin = https://github.com/TheSpaghettiDetective/moonraker-obico.git
+env = /home/sonic/moonraker-obico/../moonraker-obico-env/bin/python
+requirements = requirements.txt
+install_script = install.sh
+managed_services = 
+	moonraker-obico
+
+[update_manager crowsnest]
+type = git_repo
+path = ~/crowsnest
+origin = https://github.com/mainsail-crew/crowsnest.git
+managed_services = crowsnest
+install_script = tools/pkglist.sh
+
+#################################################################
+All Configuration Files:
+/home/sonic/printer_data/config/moonraker.conf
+/home/sonic/printer_data/config/octoeverywhere-system.cfg
+/home/sonic/printer_data/config/octoapp-system.cfg
+/home/sonic/printer_data/config/moonraker-obico-update.cfg
+#################################################################
+Loading Sqlite database provider. Sqlite Version: 3.34.1
+Unsafe Shutdown Count: 18
+
+System Info:
+
+***python***
+  version: (3, 9, 2, 'final', 0)
+  version_string: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
+
+***cpu_info***
+  cpu_count: 4
+  bits: 32bit
+  processor: aarch64
+  cpu_desc: ARMv8 Processor rev 4 (v8l)
+  serial_number: 
+  hardware_desc: T800
+  model: sonic_lcd
+  total_memory: 2030728
+  memory_units: kB
+
+***sd_info***
+  manufacturer_id: 45
+  manufacturer: Unknown
+  oem_id: 0100
+  product_name: DG400
+  product_revision: 3.8
+  serial_number: 0127ea95
+  manufacturer_date: 9/2123
+  capacity: Unknown
+  total_bytes: 0
+
+***distribution***
+  name: Debian GNU/Linux 11 (bullseye)
+  id: debian
+  version: 11
+  version_parts: {'major': '11', 'minor': '', 'build_number': ''}
+  like: 
+  codename: bullseye
+  release_info: {}
+  kernel_version: 4.9.191
+
+***virtualization***
+  virt_type: none
+  virt_identifier: none
+
+***network***
+
+***canbus***
+
+***Allowed Services***
+  klipper_mcu
+  webcamd
+  MoonCord
+  KlipperScreen
+  moonraker-telegram-bot
+  moonraker-obico
+  sonar
+  crowsnest
+  octoeverywhere
+  ratos-configurator
+  octoapp
+Module libcamera unavailable, import failed
+
+Systemd unit moonraker.service:
+unit_name: moonraker.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['network-online.target', 'sysinit.target', '-.mount', 'system.slice']
+**After=['systemd-journald.socket', 'network-online.target', 'sysinit.target', '-.mount', 'system.slice', 'basic.target']
+**SupplementaryGroups=['moonraker-admin']
+**EnvironmentFiles=/home/sonic/printer_data/systemd/moonraker.env
+**ExecStart=/home/sonic/moonraker-env/bin/python $MOONRAKER_ARGS
+**WorkingDirectory=/home/sonic/moonraker
+**FragmentPath=/etc/systemd/system/moonraker.service
+**Description=API Server for Klipper SV1
+**User=sonic
+
+Systemd unit klipper.service:
+unit_name: klipper.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['-.mount', 'system.slice', 'sysinit.target']
+**After=['systemd-journald.socket', 'network-online.target', 'sysinit.target', '-.mount', 'system.slice', 'basic.target']
+**SupplementaryGroups=[]
+**EnvironmentFiles=/home/sonic/printer_data/systemd/klipper.env
+**ExecStart=/home/sonic/klippy-env/bin/python $KLIPPER_ARGS
+**WorkingDirectory=/home/sonic/klipper
+**FragmentPath=/etc/systemd/system/klipper.service
+**Description=Klipper 3D Printer Firmware SV1
+**User=sonic
+Git Repo moonraker: No warnings detected
+Git Repo klipper: No warnings detected
+Git Repo KlipperScreen: No warnings detected
+Git Repo mainsail-config: No warnings detected
+Git Repo octoeverywhere: No warnings detected
+Git Repo octoapp: No warnings detected
+Git Repo moonraker-obico: No warnings detected
+Git Repo crowsnest: No warnings detected
+Klipper Version: v0.13.0-233-g20d9c84a9
+2025-09-05 21:48:20,796 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 3.11ms
+2025-09-05 21:48:20,796 [websockets.py:open()] - Websocket Opened: ID: 4081671400, Proxied: False, User Agent: , Host Name: 0.0.0.0
+2025-09-05 21:48:20,805 [websockets.py:_handle_identify()] - Websocket 4081671400 Client Identified - Name: OctoEverywhere, Version: 4.3.13, Type: agent
+2025-09-05 21:52:41,550 [application.py:log_request()] - 404 GET /server/database/item?namespace=mainsail&key=miscellaneous.entries (127.0.0.1) [_TRUSTED_USER_] 4.89ms
+2025-09-05 21:53:30,720 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2025-09-05 21:53:30,731 [websockets.py:on_close()] - Websocket Closed: ID: 4082029280 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 320.30
+2025-09-05 21:53:30,739 [websockets.py:on_close()] - Websocket Closed: ID: 4081671400 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 29.90
+2025-09-05 21:53:30,909 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: 503, Message: Klippy Host not connected
+2025-09-05 21:53:31,910 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: 503, Message: Klippy Host not connected
+2025-09-05 21:53:31,988 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2025-09-05 21:53:32,764 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 5.23ms
+2025-09-05 21:53:32,765 [websockets.py:open()] - Websocket Opened: ID: 4081671976, Proxied: False, User Agent: , Host Name: 0.0.0.0
+2025-09-05 21:53:32,769 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 7.53ms
+2025-09-05 21:53:32,770 [websockets.py:open()] - Websocket Opened: ID: 4070856064, Proxied: False, User Agent: , Host Name: 0.0.0.0
+2025-09-05 21:53:32,776 [websockets.py:_handle_identify()] - Websocket 4081671976 Client Identified - Name: OctoEverywhere, Version: 4.3.13, Type: agent
+2025-09-05 21:53:32,782 [websockets.py:_handle_identify()] - Websocket 4070856064 Client Identified - Name: OctoApp, Version: 3.0.1, Type: agent
+2025-09-05 21:53:34,484 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2025-09-05 21:53:34,486 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2025-09-05 21:53:34,735 [job_state.py:_handle_started()] - Job state initialized: standby
+2025-09-05 21:53:35,005 [klippy_connection.py:_check_ready()] - Klippy ready
+2025-09-05 21:53:35,489 [data_store.py:_init_sensors()] - Configuring available sensors: ['heater_bed', 'extruder']
+2025-09-05 21:53:36,153 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2025-09-05 21:57:36,530 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 2.94ms
+2025-09-05 21:57:36,531 [websockets.py:open()] - Websocket Opened: ID: 4070856376, Proxied: False, User Agent: , Host Name: 0.0.0.0
+2025-09-05 21:57:36,589 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 2.65ms
+2025-09-05 21:57:36,589 [websockets.py:open()] - Websocket Opened: ID: 4070858512, Proxied: False, User Agent: , Host Name: 0.0.0.0
+2025-09-05 21:57:38,160 [websockets.py:_handle_identify()] - Websocket 4070856376 Client Identified - Name: mainsail, Version: 2.14.0, Type: web
+2025-09-05 21:57:38,185 [websockets.py:_handle_identify()] - Websocket 4070858512 Client Identified - Name: OctoEverywhere-BrowserAgent, Version: 1.0.0, Type: web
+2025-09-05 22:04:07,387 [websockets.py:on_close()] - Websocket Closed: ID: 4070858512 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 20.74
+2025-09-05 22:04:07,392 [websockets.py:on_close()] - Websocket Closed: ID: 4070856376 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 20.81
+2025-09-05 22:18:00,937 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'octoapp.': HTTP 404: Not Found
+2025-09-05 22:48:00,953 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'octoapp.': HTTP 404: Not Found
+2025-09-05 22:57:57,765 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 127.0.0.1
+2025-09-05 23:18:01,015 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'octoapp.': HTTP 404: Not Found
+2025-09-05 23:48:01,138 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'octoapp.': HTTP 404: Not Found
