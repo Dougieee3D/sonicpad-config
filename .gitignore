@@ -1,3 +1,14 @@
 printer_data/config/moonraker-timelapse/
 printer_data/config/moonraker-timelapse/
 printer_data/config/moonraker-timelapse/
+# Keep repo lean
+printer_data/gcodes/
+printer_data/logs/
+printer_data/timelapse/frames/
+printer_data/timelapse/*.mp4
+printer_data/timelapse/*.mkv
+printer_data/timelapse/*.mov
+printer_data/webcam*
+printer_data/crowsnest/media/
+# Subrepo noise
+printer_data/config/moonraker-timelapse/
