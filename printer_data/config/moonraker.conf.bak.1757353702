@@ -25,8 +25,6 @@ cors_domains:
     machine.shell_command
 
 
-trusted_methods:
-    machine.shell_command
 [octoprint_compat]
 
 [history]
